@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 
 class RandomSquare extends StatefulWidget {
   final int gridSize; // Change this value to change the grid size
-  final Duration updateInterval; // Change this value to change the update interval
+  final Duration
+      updateInterval; // Change this value to change the update interval
 
   const RandomSquare({
     Key? key,
-    this.gridSize = 10, 
-    this.updateInterval = const Duration(seconds: 1), 
+    this.gridSize = 10,
+    this.updateInterval = const Duration(seconds: 1),
   }) : super(key: key);
 
   @override

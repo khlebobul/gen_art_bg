@@ -1,6 +1,6 @@
 name: gen_art_bg
-description: "Flutter Animated GenArt Backgrounds collection."
-version: 0.0.1
+description: "Flutter Animated Generative Art Backgrounds collection. Can be used as a background or separately."
+version: 0.0.2
 homepage: https://github.com/khlebobul/gen_art_bg
 
 environment:

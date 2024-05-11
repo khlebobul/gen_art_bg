@@ -1,16 +1,21 @@
 # 🎨 Gen Art Backgrounds
 
-<!-- TODO: Add badges -->
-Flutter Animated GenArt Backgrounds collection
+[![pub package](https://img.shields.io/pub/v/gen_art_bg.svg)](https://pub.dartlang.org/packages/gen_art_bg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Flutter Animated Generative Art Backgrounds collection.
 
 ## Installing
 
-<!-- TODO -->
+```yaml
+dependencies:
+  gen_art_bg: ^0.0.2
+```
 
 ## Import
 
-<!-- TODO -->
+```dart
+import 'package:gen_art_bg/gen_art_bg.dart';
+```
 
 ## Usage
 
@@ -200,83 +205,83 @@ void main() {
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/wave_dot_grid.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_dot_grid.gif" width="100px">
       <br />
       WaveLineGrid
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/perlin_noise.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/perlin_noise.gif" width="100px">
       <br />
       PerlinNoise
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/random_square.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/random_square.gif" width="100px">
       <br />
       RandomSquare
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/spiral_wave.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/spiral_wave.gif" width="100px">
       <br />
       SpiralWave
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/grid_of_lines.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/grid_of_lines.gif" width="100px">
       <br />
       GridOfLines
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/animated_colored_squares.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_colored_squares.gif" width="100px">
       <br />
       AnimatedColoredSquares
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/animated_lines.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_lines.gif" width="100px">
       <br />
       AnimatedLines
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/animated_lines_gradient.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_lines_gradient.gif" width="100px">
       <br />
       AnimatedLinesGradient
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/rotating_trapezium.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/rotating_trapezium.gif" width="100px">
       <br />
       AnimatedTrapezium
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/random_noise.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/random_noise.gif" width="100px">
       <br />
       RandomNoise
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/molnar_art.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/molnar_art.gif" width="100px">
       <br />
       MolnarArt
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/conic_gradient.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/conic_gradient.gif" width="100px">
       <br />
       ConicGradient
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/pulsed_circle_grid.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/pulsed_circle_grid.gif" width="100px">
       <br />
       CircleGrid
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/animated_bw_squares.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_bw_squares.gif" width="100px">
       <br />
       AnimatedBwSquares
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/blob/main/screenshots/wave_line_grid.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_line_grid.gif" width="100px">
       <br />
       WaveLineGrid
     </td>

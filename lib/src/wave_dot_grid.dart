@@ -18,7 +18,8 @@ class WaveDotGrid extends StatefulWidget {
   _WaveDotGridState createState() => _WaveDotGridState();
 }
 
-class _WaveDotGridState extends State<WaveDotGrid> with TickerProviderStateMixin {
+class _WaveDotGridState extends State<WaveDotGrid>
+    with TickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
