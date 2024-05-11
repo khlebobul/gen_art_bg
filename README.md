@@ -14,20 +14,20 @@ Flutter Animated GenArt Backgrounds collection
 
 ## Usage
 
-```
-return Scaffold(
-      backgroundColor: backgroundColor,
-      body: Stack(
-        children: [
-          // Background
-          const Positioned.fill(
-            child: WaveGrid(
-              // Parameters
-            ),
-           ) // Animated Background
-        ],
+```dart
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      body: WaveLineGrid(
+        columns: 15, // Change this value to change the number of columns
+        rows: 25, // Change this value to change the number of rows
+        locationConstant: 100, // Change this value to change the location
+        animationDuration: Duration(seconds: 5), // Change this value to change the animation duration
+      )
     ),
-),
+  ));
+}
 ```
 
 <details><summary>Examples of use with parameters</summary>
@@ -193,6 +193,7 @@ return Scaffold(
           animationDuration: Duration(seconds: 5), // animation duration
         ),
   ```
+</details>
 
 ## Showcase
 
