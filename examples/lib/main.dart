@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen_art_backgrounds/backgrounds/wave_line_grid.dart';
+import 'package:flutter_gen_art_backgrounds/wave_line_grid.dart';
 
 void main() {
   runApp(const MaterialApp(
