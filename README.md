@@ -303,7 +303,7 @@ MIT License
 
 ## Additional information
 
-Created by [Gled](https://bento.me/khlebobul) (a.k.a khlebobul)
+Created by [Gled](https://bento.me/khlebobul) (a.k.a khlebobul) | sbgleb10@gmail.com
 
 Inspered by [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
