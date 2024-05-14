@@ -6,5 +6,11 @@
 
 * Update README.md
 * Update pubspec.yaml (add more package decsription)
-* format files
-* update dependencies
+* Format files
+* Update dependencies
+
+## 0.0.3
+
+* Update README.md 
+    * Fixed an error in WaveDotGrid and PulsedCircleGrid name
+    * Add Medium article link

@@ -198,6 +198,15 @@ void main() {
           animationDuration: Duration(seconds: 5), // animation duration
         ),
   ```
+
+  ##### CircleGrid
+
+  ```dart
+  CircleGrid(
+    
+  )
+  ```
+
 </details>
 
 ## Showcase
@@ -207,7 +216,7 @@ void main() {
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_dot_grid.gif" width="100px">
       <br />
-      WaveLineGrid
+      WaveDotGrid
     </td>
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/perlin_noise.gif" width="100px">
@@ -273,7 +282,7 @@ void main() {
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/pulsed_circle_grid.gif" width="100px">
       <br />
-      CircleGrid
+      PulsedCircleGrid
     </td>
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_bw_squares.gif" width="100px">
@@ -307,6 +316,8 @@ The artwork is trusted for the web, so for now some of it may not work well on m
 MIT License
 
 ## Additional information
+
+[Medium article link](https://medium.com/@khlebobul/adding-a-bit-of-generative-art-to-a-flutter-project-13b22dd4f274)
 
 Created by [Gled](https://bento.me/khlebobul) (a.k.a khlebobul) | sbgleb10@gmail.com
 
