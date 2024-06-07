@@ -14,3 +14,13 @@
 * Update README.md 
     * Fixed an error in WaveDotGrid and PulsedCircleGrid name
     * Add Medium article link
+
+## 0.0.4
+
+* Update README.md 
+    * Correcting a typographical error
+    * Remove Installing section
+    * Remove Import section
+    * Add badge with contacts information
+    * Update website link
+* Update puckages

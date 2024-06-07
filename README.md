@@ -4,19 +4,6 @@
 
 Flutter Animated Generative Art Backgrounds collection.
 
-## Installing
-
-```yaml
-dependencies:
-  gen_art_bg: ^0.0.2
-```
-
-## Import
-
-```dart
-import 'package:gen_art_bg/gen_art_bg.dart';
-```
-
 ## Usage
 
 ```dart
@@ -321,7 +308,9 @@ MIT License
 
 Created by [Gled](https://bento.me/khlebobul) (a.k.a khlebobul) | sbgleb10@gmail.com
 
-Inspered by [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
+[![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
+
+Inspired by [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
 And here are some cool articles and repos on the topic of generative art in Flutter
 
