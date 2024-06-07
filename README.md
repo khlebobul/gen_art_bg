@@ -306,7 +306,7 @@ MIT License
 
 [Medium article link](https://medium.com/@khlebobul/adding-a-bit-of-generative-art-to-a-flutter-project-13b22dd4f274)
 
-Created by [Gled](https://bento.me/khlebobul) (a.k.a khlebobul) | sbgleb10@gmail.com
+Created by [Gled](https://khlebobul.github.io/) (a.k.a khlebobul) | sbgleb10@gmail.com
 
 [![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
 
