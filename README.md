@@ -55,16 +55,6 @@ void main() {
         ),
   ```
 
-  ##### ConicGradient
-
-  ```dart
-  ConicGradient(
-          durationSeconds: 10, // Duration of the animation in seconds
-          maxDiameter: 1.2, // Maximum diameter of the gradient
-          steps: 10, // Number of steps in the gradient
-        ),
-  ```
-
   ##### GridOfLines
 
   ```dart
@@ -175,17 +165,6 @@ void main() {
         ),
   ```
 
-  ##### RotatingTrapezium
-
-  ```dart
-  RotatingTrapezium(
-          nx: 20, // number of columns
-          ny: 20, // number of rows
-          t: 17, // trapezium
-          animationDuration: Duration(seconds: 5), // animation duration
-        ),
-  ```
-
   ##### CircleGrid
 
   ```dart
@@ -245,11 +224,6 @@ void main() {
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/rotating_trapezium.gif" width="100px">
-      <br />
-      AnimatedTrapezium
-    </td>
-    <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/random_noise.gif" width="100px">
       <br />
       RandomNoise
@@ -260,18 +234,6 @@ void main() {
       MolnarArt
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/conic_gradient.gif" width="100px">
-      <br />
-      ConicGradient
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/pulsed_circle_grid.gif" width="100px">
-      <br />
-      PulsedCircleGrid
-    </td>
-    <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_bw_squares.gif" width="100px">
       <br />
       AnimatedBwSquares
@@ -280,6 +242,13 @@ void main() {
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_line_grid.gif" width="100px">
       <br />
       WaveLineGrid
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/pulsed_circle_grid.gif" width="100px">
+      <br />
+      PulsedCircleGrid
     </td>
     <td align="center">
       Space for a new 

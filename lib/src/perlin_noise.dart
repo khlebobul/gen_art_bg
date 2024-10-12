@@ -1,13 +1,12 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-// Widget class for PerlinNoise
 class PerlinNoise extends StatefulWidget {
   const PerlinNoise({
     Key? key,
-    this.width = 40, // Default width
-    this.height = 40, // Default height
-    this.frequency = 5, // Default frequency
+    this.width = 40,
+    this.height = 40,
+    this.frequency = 5,
   }) : super(key: key);
 
   final int width;
@@ -15,33 +14,28 @@ class PerlinNoise extends StatefulWidget {
   final int frequency;
 
   @override
-  // State creation for PerlinNoise widget
-  // ignore: library_private_types_in_public_api
-  _PerlinNoiseState createState() => _PerlinNoiseState();
+  PerlinNoiseState createState() => PerlinNoiseState();
 }
 
-// State class for PerlinNoise widget
-class _PerlinNoiseState extends State<PerlinNoise>
+class PerlinNoiseState extends State<PerlinNoise>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   List<List<double>> sizes = [];
 
   @override
-  // Initialize state
   void initState() {
     super.initState();
-    // Initializing animation controller with duration and vsync
+
     _controller =
         AnimationController(duration: const Duration(seconds: 10), vsync: this);
-    // Tweaking animation for smoothness
+
     _animation = Tween<double>(begin: 0, end: 5).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Curves.linear, // Using Curves.linear for smooth animation
+        curve: Curves.linear,
       ),
     )..addListener(() {
-        // Update state on animation change
         setState(() {
           sizes = perlin2d(
             width: widget.width,
@@ -52,12 +46,11 @@ class _PerlinNoiseState extends State<PerlinNoise>
           );
         });
       });
-    // Start animation loop
+
     _controller.repeat();
   }
 
   @override
-  // Building the widget
   Widget build(BuildContext context) {
     return CustomPaint(
       size: Size.infinite,
@@ -66,13 +59,11 @@ class _PerlinNoiseState extends State<PerlinNoise>
   }
 
   @override
-  // Dispose animation controller
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 
-  // Generate Perlin noise for 2D space
   List<List<double>> perlin2d({
     required int width,
     required int height,
@@ -89,7 +80,6 @@ class _PerlinNoiseState extends State<PerlinNoise>
     });
   }
 
-  // Calculate Perlin noise at a point
   double _perlinAtPoint(
     double x,
     double y,
@@ -143,7 +133,6 @@ class _PerlinNoiseState extends State<PerlinNoise>
     return _interpolate(top, bottom, wy);
   }
 
-  // Calculate gradient offset dot product
   double _gradientOffsetDotProduct(
     int cornerX,
     int cornerY,
@@ -160,7 +149,6 @@ class _PerlinNoiseState extends State<PerlinNoise>
     return distanceX * gradient.x + distanceY * gradient.y;
   }
 
-  // Generate gradient based on given seed
   _Vector2 _gradient(int x, int y, int seed) {
     var hash = seed;
 
@@ -183,20 +171,17 @@ class _PerlinNoiseState extends State<PerlinNoise>
     return grads[hash & 7];
   }
 
-  // Interpolate between two values
   double _interpolate(double a, double b, double t) {
     return (b - a) * ((t * (t * 6.0 - 15.0) + 10.0) * t * t * t) + a;
   }
 }
 
-// Custom painter for drawing Perlin noise
 class PerlinNoisePainter extends CustomPainter {
   final List<List<double>> sizes;
 
   PerlinNoisePainter({required this.sizes});
 
   @override
-  // Painting the canvas
   void paint(Canvas canvas, Size size) {
     for (int i = 0; i < sizes.length; i++) {
       for (int j = 0; j < sizes[i].length; j++) {
@@ -211,13 +196,11 @@ class PerlinNoisePainter extends CustomPainter {
   }
 
   @override
-  // Check if repaint is needed
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
   }
 }
 
-// Class representing 2D vector
 class _Vector2 {
   const _Vector2(this.x, this.y);
 

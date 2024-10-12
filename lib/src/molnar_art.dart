@@ -31,11 +31,10 @@ class MolnarArt extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _MolnarArtState createState() => _MolnarArtState();
+  MolnarArtState createState() => MolnarArtState();
 }
 
-class _MolnarArtState extends State<MolnarArt> {
+class MolnarArtState extends State<MolnarArt> {
   late List<List<int>> gridCode = [];
   late double outerLen;
   late double margin;
@@ -57,18 +56,15 @@ class _MolnarArtState extends State<MolnarArt> {
     super.dispose();
   }
 
-  // Initialize variables and setup the grid
   void setup() {
-    outerLen = 100 / widget.rows; // Set the outer length of the grid cells
-    margin = outerLen * 0.02; // Set the margin for the grid cells
-    outerLayerLen = outerLen - 2 * margin; // Calculate outer layer length
-    frac = outerLayerLen / widget.n; // Calculate the fraction
+    outerLen = 100 / widget.rows;
+    margin = outerLen * 0.02;
+    outerLayerLen = outerLen - 2 * margin;
+    frac = outerLayerLen / widget.n;
 
-    // Generate the binary grid code
     createGridCode();
   }
 
-  // Generate the binary grid code
   void createGridCode() {
     for (int j = 0; j < widget.rows; j++) {
       gridCode.add([]);
@@ -82,7 +78,6 @@ class _MolnarArtState extends State<MolnarArt> {
     }
   }
 
-  // Shift the grid code to create animation
   void shiftGridCode() {
     for (int j = 0; j < widget.rows; j++) {
       for (int i = 0; i < widget.cols; i++) {
@@ -90,26 +85,31 @@ class _MolnarArtState extends State<MolnarArt> {
         if (Random().nextDouble() < 0.2) gridCode[j][i] += 2048;
       }
     }
-    setState(() {}); // Trigger widget rebuild after shifting grid
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: 300, // Adjust according to your needs
-          height: 300, // Adjust according to your needs
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: widget.cols,
-            ),
-            itemBuilder: (BuildContext context, int index) {
+    return Container(
+      color: Colors.white,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          double cellWidth = constraints.maxWidth / widget.cols;
+          double cellHeight = constraints.maxHeight / widget.rows;
+          outerLen = cellWidth < cellHeight ? cellWidth : cellHeight;
+          margin = outerLen * 0.02;
+          outerLayerLen = outerLen - 2 * margin;
+          frac = outerLayerLen / widget.n;
+
+          return Stack(
+            children: List.generate(widget.rows * widget.cols, (index) {
               int row = (index / widget.cols).floor();
               int col = index % widget.cols;
-              return AnimatedContainer(
-                duration: const Duration(seconds: 1),
-                color: Colors.transparent,
+              return Positioned(
+                left: col * cellWidth,
+                top: row * cellHeight,
+                width: cellWidth,
+                height: cellHeight,
                 child: CustomPaint(
                   painter: MolnarPainter(
                     binaryCode: gridCode[row][col],
@@ -121,10 +121,9 @@ class _MolnarArtState extends State<MolnarArt> {
                   ),
                 ),
               );
-            },
-            itemCount: widget.rows * widget.cols,
-          ),
-        ),
+            }),
+          );
+        },
       ),
     );
   }
@@ -149,11 +148,10 @@ class MolnarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    double cx, cy;
+    double cx = size.width / 2;
+    double cy = size.height / 2;
 
     for (int k = 0; k < colSeq.length; k++) {
-      cx = outerLen / 2;
-      cy = outerLen / 2;
       double len = outerLayerLen - k * frac;
       final Paint paint = Paint()
         ..color = colSeq[k]
@@ -162,11 +160,10 @@ class MolnarPainter extends CustomPainter {
 
       if (((binaryCode >> k) & 1) == 1) {
         canvas.drawRect(
-          Rect.fromLTWH(
-            cx - len / 2,
-            cy - len / 2,
-            len,
-            len,
+          Rect.fromCenter(
+            center: Offset(cx, cy),
+            width: len,
+            height: len,
           ),
           paint,
         );

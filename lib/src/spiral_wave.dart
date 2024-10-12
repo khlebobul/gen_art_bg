@@ -5,68 +5,70 @@ import 'package:flutter/material.dart';
 class SpiralWave extends StatefulWidget {
   const SpiralWave({
     Key? key,
-    this.size = 10, // Size of each circle
-    this.k = 20, // Constant value for controlling wave effect
+    this.size = 10,
+    this.k = 20,
   }) : super(key: key);
 
-  final double size; // Size of each circle
-  final double k; // Constant value for controlling wave effect
+  final double size;
+  final double k;
 
   @override
-  // ignore: library_private_types_in_public_api
-  _SpiralWaveState createState() => _SpiralWaveState();
+  SpiralWaveState createState() => SpiralWaveState();
 }
 
-class _SpiralWaveState extends State<SpiralWave>
+class SpiralWaveState extends State<SpiralWave>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late List<List<Offset>> circles; // List of circles to be drawn
-  late int cols, rows; // Number of columns and rows in the grid
-  late double r; // Radius of the wave effect
+  late List<List<Offset>> circles;
+  late int cols, rows;
+  late double r;
 
   @override
   void initState() {
     super.initState();
-    // Initialize animation controller with a duration of 5 seconds, set to repeat
+
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 5),
     )..repeat();
-    cols = 0; // Initialize cols here
+    cols = 0;
     circles = [];
-    rows = 0; // Initialize rows here
+    rows = 0;
   }
 
   @override
   void dispose() {
-    _controller.dispose(); // Dispose animation controller
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return CustomPaint(
-          painter: WavePatternPainter(
-            circles: circles,
-            animationValue: _controller.value,
-            size: widget.size,
-            k: widget.k,
-          ),
-          size: Size.infinite, // Paint within the infinite size of the widget
-        );
-      },
+    return Container(
+      color: Colors.white,
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return CustomPaint(
+            painter: WavePatternPainter(
+              circles: circles,
+              animationValue: _controller.value,
+              size: widget.size,
+              k: widget.k,
+            ),
+            size: Size.infinite,
+          );
+        },
+      ),
     );
   }
 }
 
 class WavePatternPainter extends CustomPainter {
-  final List<List<Offset>> circles; // List of circles to be drawn
-  final double animationValue; // Current value of the animation
-  final double size; // Size of each circle
-  final double k; // Constant value for controlling wave effect
+  final List<List<Offset>> circles;
+  final double animationValue;
+  final double size;
+  final double k;
 
   WavePatternPainter({
     required this.circles,
@@ -76,33 +78,27 @@ class WavePatternPainter extends CustomPainter {
   });
 
   @override
-  // ignore: avoid_renaming_method_parameters
-  void paint(Canvas canvas, Size canvasSize) {
-    final double width = canvasSize.width; // Width of the canvas
-    final double height = canvasSize.height; // Height of the canvas
-
-    final double centerWidth = width / 2; // Center width of the canvas
-    final double centerHeight = height / 2; // Center height of the canvas
-
+  void paint(Canvas canvas, Size size) {
+    final double width = size.width;
+    final double height = size.height;
+    final double centerWidth = width / 2;
+    final double centerHeight = height / 2;
     final Paint paint = Paint()
-      ..color = Colors.black // Circle color
-      ..style = PaintingStyle.fill; // Fill style for the circles
+      ..color = Colors.black
+      ..style = PaintingStyle.fill;
 
-    // Loop through each cell in the grid
-    for (int i = 0; i < width / (size / 2); i++) {
-      for (int j = 0; j < height / (size / 2); j++) {
-        double x = size / 4 + i * (size / 2); // X-coordinate of the circle
-        double y = size / 4 + j * (size / 2); // Y-coordinate of the circle
-        double d = sqrt(pow(x - centerWidth, 2) +
-            pow(y - centerHeight, 2)); // Distance from the center
-        double angle =
-            d / k + animationValue * 2 * pi; // Angle for the wave effect
-        double xOffset = cos(angle) * d / k * 3; // X-offset for the wave effect
-        double yOffset = sin(angle) * d / k * 3; // Y-offset for the wave effect
-        // Draw a circle at the calculated position with a radius of size / 5
+    for (int i = 0; i < width / (this.size / 2); i++) {
+      for (int j = 0; j < height / (this.size / 2); j++) {
+        double x = this.size / 4 + i * (this.size / 2);
+        double y = this.size / 4 + j * (this.size / 2);
+        double d = sqrt(pow(x - centerWidth, 2) + pow(y - centerHeight, 2));
+        double angle = d / k + animationValue * 2 * pi;
+        double xOffset = cos(angle) * d / k * 3;
+        double yOffset = sin(angle) * d / k * 3;
+
         canvas.drawCircle(
           Offset(x + xOffset, y + yOffset),
-          size / 5,
+          this.size / 5,
           paint,
         );
       }
@@ -111,7 +107,6 @@ class WavePatternPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(WavePatternPainter oldDelegate) {
-    // Repaint only if the animation value changes
     return animationValue != oldDelegate.animationValue;
   }
 }

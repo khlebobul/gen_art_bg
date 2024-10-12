@@ -23,4 +23,10 @@
     * Remove Import section
     * Add badge with contacts information
     * Update website link
-* Update puckages
+* Update packages
+
+## 0.0.5
+
+* All widgets are adapted to different screen sizes
+* Updated demos
+* Removed Rotatint trapezium and Conic Gradient

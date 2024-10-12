@@ -1,37 +1,30 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-// Widget class for AnimatedColoredSquares
 class AnimatedColoredSquares extends StatefulWidget {
-  final int squareCount;
+  final double squareCount;
   final double animationDuration;
-  final double margin;
   final double strokeWidth;
 
   const AnimatedColoredSquares(
       {Key? key,
       this.squareCount = 20,
       this.animationDuration = 5,
-      this.margin = 50,
       this.strokeWidth = 1.5})
       : super(key: key);
 
   @override
-  // State creation for AnimatedColoredSquares widget
-  // ignore: library_private_types_in_public_api
-  _AnimatedColoredSquaresState createState() => _AnimatedColoredSquaresState();
+  AnimatedColoredSquaresState createState() => AnimatedColoredSquaresState();
 }
 
-// State class for AnimatedColoredSquares widget
-class _AnimatedColoredSquaresState extends State<AnimatedColoredSquares>
+class AnimatedColoredSquaresState extends State<AnimatedColoredSquares>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
-  // Initialize state
   void initState() {
     super.initState();
-    // Initializing animation controller with duration and vsync
+
     _controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: widget.animationDuration.toInt()),
@@ -39,55 +32,60 @@ class _AnimatedColoredSquaresState extends State<AnimatedColoredSquares>
   }
 
   @override
-  // Building the widget
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return CustomPaint(
-              size: const Size(1000, 1000),
-              painter: SquaresColoredPainter(
-                animationValue: _controller.value,
-                squareCount: widget.squareCount,
-              ),
-            );
-          },
-        ),
+    return Container(
+      color: Colors.white,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return CustomPaint(
+                size: Size(constraints.maxWidth, constraints.maxHeight),
+                painter: SquaresColoredPainter(
+                  animationValue: _controller.value,
+                  squareCount: widget.squareCount,
+                  strokeWidth: widget.strokeWidth,
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }
 
   @override
-  // Dispose animation controller
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 }
 
-// Custom painter for drawing animated colored squares
 class SquaresColoredPainter extends CustomPainter {
   final double animationValue;
-  final int squareCount;
+  final double squareCount;
+  final double strokeWidth;
 
   SquaresColoredPainter({
     required this.animationValue,
     required this.squareCount,
+    required this.strokeWidth,
   });
 
   @override
-  // Painting the canvas
   void paint(Canvas canvas, Size size) {
-    const double margin = 50; // Margin around the canvas
-    final double s =
-        (size.width - 2 * margin) / squareCount; // Size of each square
+    final double sizeX = size.width / squareCount;
+    final double sizeY = size.height / squareCount;
+    final double s = min(sizeX, sizeY);
 
-    for (var i = 0; i < squareCount; i++) {
-      double x = margin + i * s;
-      for (var j = 0; j < squareCount; j++) {
-        double y = margin + j * s;
+    final int countX = (size.width / s).ceil();
+    final int countY = (size.height / s).ceil();
+
+    for (var i = 0; i < countX; i++) {
+      double x = i * s;
+      for (var j = 0; j < countY; j++) {
+        double y = j * s;
 
         final Offset center = Offset(x + s / 2, y + s / 2);
         final double d = center.distance;
@@ -98,19 +96,18 @@ class SquaresColoredPainter extends CustomPainter {
         final double z = (sin(d / 20 - pi * 2 * animationValue) + 1) / 2;
         final double squareSize = z * s;
 
-        // Drawing the square
         final paint = Paint()
-          ..color = _rainbow(theta / (2 * pi)) // Coloring the square
+          ..color = _rainbow(theta / (2 * pi))
           ..style = PaintingStyle.fill;
         canvas.drawRect(
-            Rect.fromCenter(center: center, width: squareSize, height: s),
+            Rect.fromCenter(
+                center: center, width: squareSize, height: squareSize),
             paint);
 
-        // Drawing the border of the square
         final strokePaint = Paint()
           ..color = Colors.black
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.5;
+          ..strokeWidth = strokeWidth;
         canvas.drawRect(
             Rect.fromCenter(center: center, width: s, height: s), strokePaint);
       }
@@ -118,13 +115,12 @@ class SquaresColoredPainter extends CustomPainter {
   }
 
   @override
-  // Check if repaint is needed
   bool shouldRepaint(SquaresColoredPainter oldDelegate) {
     return animationValue != oldDelegate.animationValue ||
-        squareCount != oldDelegate.squareCount;
+        squareCount != oldDelegate.squareCount ||
+        strokeWidth != oldDelegate.strokeWidth;
   }
 
-  // Function to generate rainbow colors based on input parameter t
   Color _rainbow(double t) {
     final List<Color> palette = [
       const Color(0xFFabcd5e),

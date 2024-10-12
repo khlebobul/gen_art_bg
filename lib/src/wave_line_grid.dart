@@ -2,10 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class WaveLineGrid extends StatefulWidget {
-  final int columns; // Number of columns in the grid
-  final int rows; // Number of rows in the grid
-  final int locationConstant; // Constant to adjust the location of the grid
-  final Duration animationDuration; // Duration of the animation
+  final int columns;
+  final int rows;
+  final int locationConstant;
+  final Duration animationDuration;
 
   const WaveLineGrid({
     Key? key,
@@ -16,11 +16,10 @@ class WaveLineGrid extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _WaveLineGridState createState() => _WaveLineGridState();
+  WaveLineGridState createState() => WaveLineGridState();
 }
 
-class _WaveLineGridState extends State<WaveLineGrid>
+class WaveLineGridState extends State<WaveLineGrid>
     with TickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -45,9 +44,7 @@ class _WaveLineGridState extends State<WaveLineGrid>
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+    return SizedBox.expand(
       child: AnimatedBuilder(
         animation: _controller,
         builder: (context, _) {
@@ -87,8 +84,10 @@ class _WaveGridPainter extends CustomPainter {
     final paint = Paint()..color = Colors.black;
     final linePaint = Paint()
       ..color = Colors.black
-      ..strokeWidth = 4
+      ..strokeWidth = 2
       ..style = PaintingStyle.stroke;
+
+    canvas.drawRect(Offset.zero & size, Paint()..color = Colors.white);
 
     final grid = _generateGrid(size);
 
@@ -96,16 +95,19 @@ class _WaveGridPainter extends CustomPainter {
   }
 
   List<List<LineCell>> _generateGrid(Size size) {
+    const cellSize = 20.0;
+    const padding = cellSize;
+    final columns = ((size.width + 2 * padding) / cellSize).ceil();
+    final rows = ((size.height + 2 * padding) / cellSize).ceil();
+
     return List.generate(columns, (i) {
       return List.generate(rows, (j) {
         return LineCell(
-          colSize: size.width / columns,
-          rowSize: size.height / rows,
-          x0: size.width / columns * i,
-          y0: size.height / rows * j,
-          r: (size.width / columns) / 10,
-          angle: (size.width / columns) * locationConstant / 100 * i +
-              locationConstant * j,
+          cellSize: cellSize,
+          x0: cellSize * i - padding,
+          y0: cellSize * j - padding,
+          r: cellSize / 10,
+          angle: cellSize * locationConstant / 100 * i + locationConstant * j,
         );
       });
     });
@@ -117,27 +119,24 @@ class _WaveGridPainter extends CustomPainter {
       for (var j = 0; j < grid[i].length; j++) {
         grid[i][j].update(waveAnimation.value);
         canvas.drawCircle(
-          Offset(grid[i][j].x0 * 1.2 + grid[i][j].x,
-              grid[i][j].y0 * 1.2 + grid[i][j].y),
+          Offset(grid[i][j].x0 + grid[i][j].x, grid[i][j].y0 + grid[i][j].y),
           grid[i][j].r,
           paint,
         );
 
         if (i > 0) {
           canvas.drawLine(
-            Offset(grid[i][j].x0 * 1.2 + grid[i][j].x,
-                grid[i][j].y0 * 1.2 + grid[i][j].y),
-            Offset(grid[i - 1][j].x0 * 1.2 + grid[i - 1][j].x,
-                grid[i - 1][j].y0 * 1.2 + grid[i - 1][j].y),
+            Offset(grid[i][j].x0 + grid[i][j].x, grid[i][j].y0 + grid[i][j].y),
+            Offset(grid[i - 1][j].x0 + grid[i - 1][j].x,
+                grid[i - 1][j].y0 + grid[i - 1][j].y),
             linePaint,
           );
         }
         if (j > 0) {
           canvas.drawLine(
-            Offset(grid[i][j].x0 * 1.2 + grid[i][j].x,
-                grid[i][j].y0 * 1.2 + grid[i][j].y),
-            Offset(grid[i][j - 1].x0 * 1.2 + grid[i][j - 1].x,
-                grid[i][j - 1].y0 * 1.2 + grid[i][j - 1].y),
+            Offset(grid[i][j].x0 + grid[i][j].x, grid[i][j].y0 + grid[i][j].y),
+            Offset(grid[i][j - 1].x0 + grid[i][j - 1].x,
+                grid[i][j - 1].y0 + grid[i][j - 1].y),
             linePaint,
           );
         }
@@ -158,8 +157,7 @@ class LineCell {
   late double y;
 
   LineCell({
-    required double colSize,
-    required double rowSize,
+    required double cellSize,
     required this.x0,
     required this.y0,
     required this.r,

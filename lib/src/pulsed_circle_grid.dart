@@ -4,29 +4,24 @@ import 'package:flutter/material.dart';
 class PulsedCircleGrid extends StatefulWidget {
   const PulsedCircleGrid({
     Key? key,
-    this.numberOfRowsColumns = 12, // Number of rows and columns in the grid
-    this.cellSize = 36, // Size of each grid cell
-    this.marginSize = 72, // Margin around the grid
-    this.circleDiameter = 27, // Diameter of circles
-    this.animationDuration = const Duration(seconds: 5), // Animation duration
+    this.numberOfColumns = 12,
+    this.circleDiameter = 27,
+    this.animationDuration = const Duration(seconds: 5),
   }) : super(key: key);
 
-  final int numberOfRowsColumns; // Number of rows and columns in the grid
-  final double cellSize; // Size of each grid cell
-  final double marginSize; // Margin around the grid
-  final double circleDiameter; // Diameter of circles
-  final Duration animationDuration; // Animation duration
+  final int numberOfColumns;
+  final double circleDiameter;
+  final Duration animationDuration;
 
   @override
-  // ignore: library_private_types_in_public_api
-  _PulsedCircleGridState createState() => _PulsedCircleGridState();
+  PulsedCircleGridState createState() => PulsedCircleGridState();
 }
 
-class _PulsedCircleGridState extends State<PulsedCircleGrid>
+class PulsedCircleGridState extends State<PulsedCircleGrid>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late List<List<double>> tilts; // Tilts for each cell
-  late List<List<double>> levels; // Levels for each cell
+  late List<List<double>> tilts;
+  late List<List<double>> levels;
 
   @override
   void initState() {
@@ -35,7 +30,6 @@ class _PulsedCircleGridState extends State<PulsedCircleGrid>
       vsync: this,
       duration: widget.animationDuration,
     )..repeat();
-    _initializeGrid();
   }
 
   @override
@@ -44,25 +38,24 @@ class _PulsedCircleGridState extends State<PulsedCircleGrid>
     super.dispose();
   }
 
-  // Initialize the grid parameters
-  void _initializeGrid() {
-    final n = widget.numberOfRowsColumns;
-    final s = widget.cellSize;
-    final margin = widget.marginSize;
+  void _initializeGrid(Size size) {
+    final n = widget.numberOfColumns;
+    final cellWidth = size.width / n;
+    final numberOfRows = (size.height / cellWidth).ceil();
 
     tilts = [];
     levels = [];
 
     for (int i = 0; i < n; i++) {
-      double x = margin + (i + 0.5) * s;
+      double x = (i + 0.5) * cellWidth;
       List<double> levelLine = [];
       List<double> tiltLine = [];
-      for (int j = 0; j < n; j++) {
-        double y = margin + (j + 0.5) * s;
-        levelLine.add(sqrt(pow(x - (margin + n * s / 2), 2) +
-                pow(y - (margin + n * s / 2), 2)) /
-            24);
-        tiltLine.add(atan2(y - (margin + n * s / 2), x - (margin + n * s / 2)));
+      for (int j = 0; j < numberOfRows; j++) {
+        double y = (j + 0.5) * cellWidth;
+        levelLine.add(
+            sqrt(pow(x - size.width / 2, 2) + pow(y - size.height / 2, 2)) /
+                (size.width / 24));
+        tiltLine.add(atan2(y - size.height / 2, x - size.width / 2));
       }
       levels.add(levelLine);
       tilts.add(tiltLine);
@@ -71,27 +64,27 @@ class _PulsedCircleGridState extends State<PulsedCircleGrid>
 
   @override
   Widget build(BuildContext context) {
-    final n = widget.numberOfRowsColumns;
-    final s = widget.cellSize;
-    final margin = widget.marginSize;
-    final d = widget.circleDiameter;
-
-    return Center(
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return CustomPaint(
-            size: Size(n * s + 2 * margin, n * s + 2 * margin),
-            painter: CircleGridPainter(
-              tilts: tilts,
-              levels: levels,
-              t: _controller.value * 2 * pi +
-                  100, // Animation value mapped to angle
-              n: n,
-              s: s,
-              margin: margin,
-              d: d,
-            ),
+    return Container(
+      color: Colors.white,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final size = Size(constraints.maxWidth, constraints.maxHeight);
+          _initializeGrid(size);
+          return AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return CustomPaint(
+                size: size,
+                painter: CircleGridPainter(
+                  tilts: tilts,
+                  levels: levels,
+                  t: _controller.value * 2 * pi + 100,
+                  numberOfColumns: widget.numberOfColumns,
+                  size: size,
+                  d: widget.circleDiameter,
+                ),
+              );
+            },
           );
         },
       ),
@@ -100,34 +93,34 @@ class _PulsedCircleGridState extends State<PulsedCircleGrid>
 }
 
 class CircleGridPainter extends CustomPainter {
-  final List<List<double>> tilts; // Tilts for each cell
-  final List<List<double>> levels; // Levels for each cell
-  final double t; // Angle of rotation
-  final int n; // Number of rows and columns in the grid
-  final double s; // Size of each grid cell
-  final double margin; // Margin around the grid
-  final double d; // Diameter of circles
+  final List<List<double>> tilts;
+  final List<List<double>> levels;
+  final double t;
+  final int numberOfColumns;
+  final Size size;
+  final double d;
 
   CircleGridPainter({
     required this.tilts,
     required this.levels,
     required this.t,
-    required this.n,
-    required this.s,
-    required this.margin,
+    required this.numberOfColumns,
+    required this.size,
     required this.d,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
-    for (int i = 0; i < n; i++) {
-      double x = margin + (i + 0.5) * s;
-      for (int j = 0; j < n; j++) {
-        double y = margin + (j + 0.5) * s;
+    final cellWidth = size.width / numberOfColumns;
+    final numberOfRows = (size.height / cellWidth).ceil();
+
+    for (int i = 0; i < numberOfColumns; i++) {
+      double x = (i + 0.5) * cellWidth;
+      for (int j = 0; j < numberOfRows; j++) {
+        double y = (j + 0.5) * cellWidth;
         double theta = (t - levels[i][j]) % (2 * pi);
         if (theta < pi) theta = pi - theta;
 
-        // Draw pulsating circles
         canvas.drawArc(
           Rect.fromCircle(center: Offset(x, y), radius: d / 2),
           tilts[i][j] - theta,
@@ -138,7 +131,6 @@ class CircleGridPainter extends CustomPainter {
             ..style = PaintingStyle.fill,
         );
 
-        // Draw circles outline
         canvas.drawCircle(
           Offset(x, y),
           d / 2,

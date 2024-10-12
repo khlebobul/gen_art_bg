@@ -2,9 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RandomNoise extends StatefulWidget {
-  final Duration duration; // Duration of animation
-  final double dotSize; // Size of dots
-  final double dotSpacing; // Spacing between dots
+  final Duration duration;
+  final double dotSize;
+  final double dotSpacing;
 
   const RandomNoise({
     Key? key,
@@ -14,11 +14,10 @@ class RandomNoise extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _RandomNoiseState createState() => _RandomNoiseState();
+  RandomNoiseState createState() => RandomNoiseState();
 }
 
-class _RandomNoiseState extends State<RandomNoise>
+class RandomNoiseState extends State<RandomNoise>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -75,7 +74,6 @@ class AnimatedCanvasPainter extends CustomPainter {
 
     canvas.drawColor(Colors.black, BlendMode.src);
 
-    // Draw random noise on the canvas
     for (double y = 0; y < size.height; y += dotSpacing) {
       for (double x = 0; x < size.width; x += dotSpacing) {
         if (f(x, y, animationValue)) {
@@ -94,7 +92,6 @@ class AnimatedCanvasPainter extends CustomPainter {
     return true;
   }
 
-  // Random function to generate noise
   bool f(double x, double y, double t) {
     Random random = Random();
     int k = (random.nextDouble() * 100).round();
