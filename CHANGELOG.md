@@ -29,4 +29,8 @@
 
 * All widgets are adapted to different screen sizes
 * Updated demos
-* Removed Rotatint trapezium and Conic Gradient
+* Removed Rotating Trapezium and Conic Gradient
+
+## 0.0.6
+
+* Updated README.md

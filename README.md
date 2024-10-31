@@ -1,8 +1,16 @@
 # 🎨 Gen Art Backgrounds
 
+<div align="center">
+
 [![pub package](https://img.shields.io/pub/v/gen_art_bg.svg)](https://pub.dartlang.org/packages/gen_art_bg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+![Gen Art Backgrounds GIF](https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/header.gif)
+
 Flutter Animated Generative Art Backgrounds collection.
+
+</div>
+
 
 ## Usage
 
@@ -163,14 +171,6 @@ void main() {
           locationConstant: 100, // Constant to adjust the location of the grid
           animationDuration:  Duration(seconds: 5), // Duration of the animation
         ),
-  ```
-
-  ##### CircleGrid
-
-  ```dart
-  CircleGrid(
-    
-  )
   ```
 
 </details>
