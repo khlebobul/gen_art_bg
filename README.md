@@ -172,6 +172,46 @@ void main() {
           animationDuration:  Duration(seconds: 5), // Duration of the animation
         ),
   ```
+  ##### DynamicShapes
+
+  ```dart
+  DynamicShapes(
+        colors: [Colors.blue, Colors.red, Colors.green],
+        maxShapes: 150, // max number of shapes
+        minShapeSize: 0.02, // min shape size
+        maxShapeSize: 0.08, // max shape size
+        minActionPoints: 3, // min number of actions
+        maxActionPoints: 6, // max number of actions
+        animationSpeed: 1.5, // animation speed
+        backgroundColor: Colors.black, // background color
+      ),
+  ```
+
+  ##### ExpandingCircles
+
+  ```dart
+  ExpandingCircles(
+        // Custom list of colors
+        colors: [
+          Colors.blue,
+          Colors.red,
+          Colors.green,
+          // ... other colors
+        ],
+        // Number of moving circles
+        numberOfMovers: 15,
+        // Grid size (affects number of blocks)
+        gridSize: 50,
+        // Block scale (0.0 - 1.0)
+        blockScale: 0.75,
+        // Minimum circle expansion speed
+        minSpeed: 5.0,
+        // Maximum circle expansion speed
+        maxSpeed: 20.0,
+        // Background color
+        backgroundColor: Color(0xFF050505),
+      ),
+  ```
 
 </details>
 
@@ -251,6 +291,16 @@ void main() {
       PulsedCircleGrid
     </td>
     <td align="center">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/dynamic_shapes.gif" width="100px">
+      <br />
+      PulsedCircleGrid
+    </td>
+    <td align="center">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="100px">
+      <br />
+      PulsedCircleGrid
+    </td>
+    <td align="center">
       Space for a new 
     </td>
   </tr>
@@ -295,6 +345,7 @@ And here are some cool articles and repos on the topic of generative art in Flut
 
 #### Processing creators
 - [Roni Kaufman](https://openprocessing.org/user/184331?view=sketches&o=48)
+- [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
 
 
 If you know of any other resources on this topic, be sure to let me know

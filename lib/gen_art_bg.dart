@@ -13,3 +13,5 @@ export 'src/random_square.dart';
 export 'src/spiral_wave.dart';
 export 'src/wave_dot_grid.dart';
 export 'src/wave_line_grid.dart';
+export 'src/dynamic_shapes.dart';
+export 'src/expanding_circles.dart';
