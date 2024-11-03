@@ -293,12 +293,12 @@ void main() {
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/dynamic_shapes.gif" width="100px">
       <br />
-      PulsedCircleGrid
+      DynamicShapes
     </td>
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="100px">
       <br />
-      PulsedCircleGrid
+      ExpandingCircles
     </td>
     <td align="center">
       Space for a new 
