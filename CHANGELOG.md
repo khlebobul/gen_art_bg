@@ -1,10 +1,14 @@
+## 0.1.7
+
+* Fix CHANGELOG
+
 ## 0.1.6
 
 * Add DynamicShapes widget ispired by [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/dynamic_shapes.gif" width="100px">
+<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/dynamic_shapes.gif" width="200px">
 
-    ```dart
+```dart
     DynamicShapes(
         colors: [Colors.blue, Colors.red, Colors.green],
         maxShapes: 150, // max number of shapes
@@ -15,13 +19,13 @@
         animationSpeed: 1.5, // animation speed
         backgroundColor: Colors.black, // background color
       ),
-    ```
+```
 
 * Add ExpandingCircles widget ispired by [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="100px">
+<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="200px">
 
-    ```dart
+```dart
     ExpandingCircles(
         // Custom list of colors
         colors: [
@@ -43,7 +47,7 @@
         // Background color
         backgroundColor: Color(0xFF050505),
       ),
-  ```
+```
 
 ## 0.0.6
 
