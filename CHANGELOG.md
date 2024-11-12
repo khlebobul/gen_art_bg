@@ -1,3 +1,7 @@
+## 0.1.8
+
+* Add Codacy (code quality) badge 
+
 ## 0.1.7
 
 * Fix CHANGELOG
