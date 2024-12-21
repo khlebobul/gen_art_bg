@@ -7,11 +7,11 @@ class RandomNoise extends StatefulWidget {
   final double dotSpacing;
 
   const RandomNoise({
-    Key? key,
+    super.key,
     this.duration = const Duration(seconds: 10),
     this.dotSize = 13,
     this.dotSpacing = 11,
-  }) : super(key: key);
+  });
 
   @override
   RandomNoiseState createState() => RandomNoiseState();

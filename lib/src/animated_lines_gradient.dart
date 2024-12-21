@@ -5,9 +5,9 @@ class AnimatedLinesGradient extends StatefulWidget {
   final double animationDuration;
 
   const AnimatedLinesGradient({
-    Key? key,
+    super.key,
     this.animationDuration = 5,
-  }) : super(key: key);
+  });
 
   @override
   AnimatedLinesGradientState createState() => AnimatedLinesGradientState();

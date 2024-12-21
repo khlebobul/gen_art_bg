@@ -12,7 +12,7 @@ class ExpandingCircles extends StatefulWidget {
   final Color backgroundColor;
 
   const ExpandingCircles({
-    Key? key,
+    super.key,
     this.colors,
     this.numberOfMovers = 15,
     this.gridSize = 50,
@@ -20,7 +20,7 @@ class ExpandingCircles extends StatefulWidget {
     this.minSpeed = 5,
     this.maxSpeed = 20,
     this.backgroundColor = const Color(0xFF050505),
-  }) : super(key: key);
+  });
 
   @override
   ExpandingCirclesState createState() => ExpandingCirclesState();

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class SpiralWave extends StatefulWidget {
   const SpiralWave({
-    Key? key,
+    super.key,
     this.size = 10,
     this.k = 20,
-  }) : super(key: key);
+  });
 
   final double size;
   final double k;
@@ -78,19 +78,23 @@ class WavePatternPainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final double width = size.width;
-    final double height = size.height;
+
+  // ignore: avoid_renaming_method_parameters
+  void paint(Canvas canvas, Size canvasSize) {
+    final double width = canvasSize.width;
+    final double height = canvasSize.height;
+
     final double centerWidth = width / 2;
     final double centerHeight = height / 2;
+
     final Paint paint = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.fill;
 
-    for (int i = 0; i < width / (this.size / 2); i++) {
-      for (int j = 0; j < height / (this.size / 2); j++) {
-        double x = this.size / 4 + i * (this.size / 2);
-        double y = this.size / 4 + j * (this.size / 2);
+    for (int i = 0; i < width / (size / 2); i++) {
+      for (int j = 0; j < height / (size / 2); j++) {
+        double x = size / 4 + i * (size / 2);
+        double y = size / 4 + j * (size / 2);
         double d = sqrt(pow(x - centerWidth, 2) + pow(y - centerHeight, 2));
         double angle = d / k + animationValue * 2 * pi;
         double xOffset = cos(angle) * d / k * 3;
@@ -98,7 +102,7 @@ class WavePatternPainter extends CustomPainter {
 
         canvas.drawCircle(
           Offset(x + xOffset, y + yOffset),
-          this.size / 5,
+          size / 5,
           paint,
         );
       }

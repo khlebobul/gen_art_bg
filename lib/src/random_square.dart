@@ -7,10 +7,10 @@ class RandomSquare extends StatefulWidget {
   final Duration updateInterval;
 
   const RandomSquare({
-    Key? key,
+    super.key,
     this.gridSize = 10,
     this.updateInterval = const Duration(seconds: 1),
-  }) : super(key: key);
+  });
 
   @override
   RandomSquareState createState() => RandomSquareState();

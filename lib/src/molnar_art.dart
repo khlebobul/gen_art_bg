@@ -10,7 +10,7 @@ class MolnarArt extends StatefulWidget {
   final List<Color> colSeq;
 
   const MolnarArt({
-    Key? key,
+    super.key,
     this.rows = 8,
     this.cols = 8,
     this.n = 12,
@@ -28,7 +28,7 @@ class MolnarArt extends StatefulWidget {
       Color(0xFF7EB741),
       Color(0xFF1C2266),
     ],
-  }) : super(key: key);
+  });
 
   @override
   MolnarArtState createState() => MolnarArtState();
@@ -66,12 +66,13 @@ class MolnarArtState extends State<MolnarArt> {
   }
 
   void createGridCode() {
+    final random = Random();
     for (int j = 0; j < widget.rows; j++) {
       gridCode.add([]);
       for (int i = 0; i < widget.cols; i++) {
         String num = "";
         for (int b = 0; b < widget.n; b++) {
-          num += Random().nextDouble() < 0.2 ? "1" : "0";
+          num += random.nextDouble() < 0.2 ? "1" : "0";
         }
         gridCode[j].add(int.parse(num, radix: 2));
       }
@@ -79,10 +80,13 @@ class MolnarArtState extends State<MolnarArt> {
   }
 
   void shiftGridCode() {
+    final random = Random();
     for (int j = 0; j < widget.rows; j++) {
       for (int i = 0; i < widget.cols; i++) {
         gridCode[j][i] = gridCode[j][i] >> 1;
-        if (Random().nextDouble() < 0.2) gridCode[j][i] += 2048;
+        if (random.nextDouble() < 0.2) {
+          gridCode[j][i] += 2048;
+        }
       }
     }
     setState(() {});

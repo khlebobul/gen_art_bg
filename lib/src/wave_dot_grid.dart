@@ -7,11 +7,11 @@ class WaveDotGrid extends StatefulWidget {
   final int locationConstant;
 
   const WaveDotGrid({
-    Key? key,
+    super.key,
     this.columns = 15,
     this.rows = 25,
     this.locationConstant = 100,
-  }) : super(key: key);
+  });
 
   @override
   WaveDotGridState createState() => WaveDotGridState();

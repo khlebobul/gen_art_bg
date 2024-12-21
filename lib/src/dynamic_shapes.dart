@@ -14,7 +14,7 @@ class DynamicShapes extends StatefulWidget {
   final Color backgroundColor;
 
   const DynamicShapes({
-    Key? key,
+    super.key,
     this.colors,
     this.maxShapes = 100,
     this.minShapeSize = 0.01,
@@ -23,7 +23,7 @@ class DynamicShapes extends StatefulWidget {
     this.maxActionPoints = 5,
     this.animationSpeed = 1.0,
     this.backgroundColor = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   DynamicShapesState createState() => DynamicShapesState();

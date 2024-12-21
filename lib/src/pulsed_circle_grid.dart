@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class PulsedCircleGrid extends StatefulWidget {
   const PulsedCircleGrid({
-    Key? key,
+    super.key,
     this.numberOfColumns = 12,
     this.circleDiameter = 27,
     this.animationDuration = const Duration(seconds: 5),
-  }) : super(key: key);
+  });
 
   final int numberOfColumns;
   final double circleDiameter;

@@ -20,10 +20,10 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: Scaffold(
       body: WaveLineGrid(
-        columns: 15, // Change this value to change the number of columns
-        rows: 25, // Change this value to change the number of rows
-        locationConstant: 100, // Change this value to change the location
-        animationDuration: Duration(seconds: 5), // Change this value to change the animation duration
+        columns: 15,
+        rows: 25, 
+        locationConstant: 100, 
+        animationDuration: Duration(seconds: 5),
       )
     ),
   ));
@@ -32,14 +32,24 @@ void main() {
 
 <details><summary>Examples of use with parameters</summary>
   
-   ##### AnimatedBWSquares and AnimatedColoredSquares
+   ##### AnimatedSquares
 
   ```dart
-  AnimatedBWSquares(
-          squareCount: 40, // Number of squares
-          animationDuration: 10, // Duration of the animation
-          margin: 0, // Margin around the canvas
-          strokeWidth: 1.5, // Stroke width of the squares
+  AnimatedSquares(
+          squareCount: 40, 
+          animationDuration: 10,
+          margin: 0, 
+          strokeWidth: 1.5,
+          palette: [
+          Color(0xFFabcd5e),
+          Color(0xFF14976b),
+          Color(0xFF2b67af),
+          Color(0xFF62b6de),
+          Color(0xFFf589a3),
+          Color(0xFFef562f),
+          Color(0xFFfc8405),
+          Color(0xFFf9d531),
+        ],
         ),
   ```
 
@@ -47,7 +57,7 @@ void main() {
 
   ```dart
   AnimatedLinesGradient(
-          animationDuration: 5, // Duration of the animation
+          animationDuration: 5,
         ),
   ```
 
@@ -55,11 +65,11 @@ void main() {
 
   ```dart
   AnimatedLines(
-          numberOfLines: 30, // Number of lines
-          lineLength: 200, // Length of each line
-          lineColor: Colors.black, // Color of each line
-          strokeWidth: 3, // Stroke width of each line
-          animationDuration: 10, // Duration of the animation
+          numberOfLines: 30,
+          lineLength: 200, 
+          lineColor: Colors.black,
+          strokeWidth: 3, 
+          animationDuration: 10,
         ),
   ```
 
@@ -67,10 +77,10 @@ void main() {
 
   ```dart
   GridOfLines(
-          animationDuration: 5, // Animation duration in seconds
-          gridSize: 10, // Number of lines in the grid
-          strokeWidth: 0.015, // Stroke width of the lines
-          color: Colors.black, // Color of the lines
+          animationDuration: 5,
+          gridSize: 10, 
+          strokeWidth: 0.015,
+          color: Colors.black,
         ),
   ```
 
@@ -78,9 +88,9 @@ void main() {
 
   ```dart
   MolnarArt(
-          rows: 8, // Number of rows
-          cols: 8, // Number of columns
-          n: 12, // Code
+          rows: 8,
+          cols: 8,
+          n: 12,
           colSeq: [
             Color(0xFFC4951B),
             Color(0xFF9E3C52),
@@ -106,9 +116,9 @@ void main() {
 
   ``` dart
   PerlinNoise(
-          width: 40, // width
-          height: 40, // height
-          frequency: 5, // frequency
+          width: 40,
+          height: 40,
+          frequency: 5,
         ),
   ```
 
@@ -116,11 +126,11 @@ void main() {
 
   ``` dart
   PulsedCircleGrid(
-          cellSize: 36, // Size of each grid cell
-          marginSize: 72, // Margin around the grid 
-          circleDiameter: 27, // Diameter of circles
-          animationDuration: Duration(seconds: 5), // Animation duration
-          numberOfRowsColumns: 12, // Number of rows and columns in the grid
+          cellSize: 36,
+          marginSize: 72,
+          circleDiameter: 27,
+          animationDuration: Duration(seconds: 5),
+          numberOfRowsColumns: 12, 
         ),
   ```
 
@@ -128,9 +138,9 @@ void main() {
 
   ```dart
   RandomNoise(
-          duration: Duration(seconds: 10), // Duration of animation
-          dotSize: 13, // Size of dots
-          dotSpacing: 11, // Spacing between dots
+          duration: Duration(seconds: 10),
+          dotSize: 13,
+          dotSpacing: 11,
         ),
   ```
 
@@ -138,8 +148,8 @@ void main() {
 
   ```dart
   RandomSquare(
-          gridSize: 10, // Change this value to change the grid size
-          updateInterval: Duration(seconds: 1), // Change this value to change the update interval
+          gridSize: 10,
+          updateInterval: Duration(seconds: 1),
         ),
   ```
 
@@ -147,8 +157,8 @@ void main() {
 
   ```dart
   SpiralWave(
-          size: 10, // Size of each circle
-          k: 20, // Constant value for controlling wave effect
+          size: 10,
+          k: 20,
         ),
   ```
 
@@ -156,9 +166,9 @@ void main() {
 
   ```dart
   WaveDotGrid(
-          columns: 15, // Number of columns
-          rows: 25, // Number of rows
-          locationConstant: 100, // Location constant
+          columns: 15,
+          rows: 25, 
+          locationConstant: 100,
         ),
   ```
 
@@ -166,24 +176,25 @@ void main() {
 
   ```dart
   WaveLineGrid(
-          columns: 15, // Number of columns in the grid
-          rows: 25, // Number of rows in the grid
-          locationConstant: 100, // Constant to adjust the location of the grid
-          animationDuration:  Duration(seconds: 5), // Duration of the animation
+          columns: 15,
+          rows: 25,
+          locationConstant: 100,
+          animationDuration:  Duration(seconds: 5),
         ),
   ```
+
   ##### DynamicShapes
 
   ```dart
   DynamicShapes(
         colors: [Colors.blue, Colors.red, Colors.green],
-        maxShapes: 150, // max number of shapes
-        minShapeSize: 0.02, // min shape size
-        maxShapeSize: 0.08, // max shape size
-        minActionPoints: 3, // min number of actions
-        maxActionPoints: 6, // max number of actions
-        animationSpeed: 1.5, // animation speed
-        backgroundColor: Colors.black, // background color
+        maxShapes: 150,
+        minShapeSize: 0.02,
+        maxShapeSize: 0.08,
+        minActionPoints: 3,
+        maxActionPoints: 6,
+        animationSpeed: 1.5,
+        backgroundColor: Colors.black,
       ),
   ```
 
@@ -191,28 +202,43 @@ void main() {
 
   ```dart
   ExpandingCircles(
-        // Custom list of colors
         colors: [
           Colors.blue,
           Colors.red,
           Colors.green,
           // ... other colors
         ],
-        // Number of moving circles
         numberOfMovers: 15,
-        // Grid size (affects number of blocks)
         gridSize: 50,
-        // Block scale (0.0 - 1.0)
         blockScale: 0.75,
-        // Minimum circle expansion speed
         minSpeed: 5.0,
-        // Maximum circle expansion speed
         maxSpeed: 20.0,
-        // Background color
         backgroundColor: Color(0xFF050505),
       ),
   ```
 
+
+  ##### BubbleField
+
+  ```dart
+  BubbleField(
+        backgroundColor: Colors.black,
+        circleColor: Colors.white,
+        animationSpeed: 1.0,
+        gridSize: 100,
+      ),
+  ```
+
+  ##### WaveField
+  
+  ```dart
+  WaveField(
+        gridStep: 15,
+        backgroundColor: Colors.black,
+        squareColor: Colors.white,
+        animationSpeed: 0.7,
+      ),
+ ```
 </details>
 
 ## Showcase
@@ -247,9 +273,9 @@ void main() {
       GridOfLines
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_colored_squares.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_squares.gif" width="100px">
       <br />
-      AnimatedColoredSquares
+      AnimatedSquares
     </td>
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_lines.gif" width="100px">
@@ -274,9 +300,9 @@ void main() {
       MolnarArt
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/animated_bw_squares.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="100px">
       <br />
-      AnimatedBwSquares
+      ExpandingCircles
     </td>
     <td align="center">
       <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_line_grid.gif" width="100px">
@@ -296,12 +322,14 @@ void main() {
       DynamicShapes
     </td>
     <td align="center">
-      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="100px">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_field.gif" width="100px">
       <br />
-      ExpandingCircles
+      WaveField
     </td>
     <td align="center">
-      Space for a new 
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/bubble_field.gif" width="100px">
+      <br />
+      BubbleField
     </td>
   </tr>
 </table>

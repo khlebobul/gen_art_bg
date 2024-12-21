@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class PerlinNoise extends StatefulWidget {
   const PerlinNoise({
-    Key? key,
+    super.key,
     this.width = 40,
     this.height = 40,
     this.frequency = 5,
-  }) : super(key: key);
+  });
 
   final int width;
   final int height;

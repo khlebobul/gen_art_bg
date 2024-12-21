@@ -8,12 +8,12 @@ class WaveLineGrid extends StatefulWidget {
   final Duration animationDuration;
 
   const WaveLineGrid({
-    Key? key,
+    super.key,
     this.columns = 15,
     this.rows = 25,
     this.locationConstant = 100,
     this.animationDuration = const Duration(seconds: 5),
-  }) : super(key: key);
+  });
 
   @override
   WaveLineGridState createState() => WaveLineGridState();

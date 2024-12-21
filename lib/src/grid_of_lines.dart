@@ -8,12 +8,12 @@ class GridOfLines extends StatefulWidget {
   final Color color;
 
   const GridOfLines({
-    Key? key,
+    super.key,
     this.animationDuration = 5,
     this.gridSize = 10,
     this.strokeWidth = 0.015,
     this.color = Colors.black,
-  }) : super(key: key);
+  });
 
   @override
   GridOfLinesState createState() => GridOfLinesState();

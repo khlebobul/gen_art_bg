@@ -9,13 +9,13 @@ class AnimatedLines extends StatefulWidget {
   final double strokeWidth;
 
   const AnimatedLines({
-    Key? key,
+    super.key,
     this.animationDuration = 10,
     this.numberOfLines = 30,
     this.lineLength = 250,
     this.lineColor = Colors.black,
     this.strokeWidth = 5,
-  }) : super(key: key);
+  });
 
   @override
   AnimatedLinesState createState() => AnimatedLinesState();
