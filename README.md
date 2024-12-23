@@ -11,6 +11,11 @@ Flutter Animated Generative Art Backgrounds collection.
 
 </div>
 
+## Used by: 
+- [Knight's Graph](https://knightsgraph.vercel.app)
+  - [AppStore](https://apps.apple.com/us/app/knights-graph/id6737812039)
+  - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
+
 
 ## Usage
 
@@ -353,7 +358,7 @@ MIT License
 
 [Medium article link](https://medium.com/@khlebobul/adding-a-bit-of-generative-art-to-a-flutter-project-13b22dd4f274)
 
-Created by [Gled](https://khlebobul.github.io/) (a.k.a khlebobul) | sbgleb10@gmail.com
+Created by [Gled](https://khlebobul.github.io/) | khlebobul@gmail.com
 
 [![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
 
@@ -374,6 +379,7 @@ And here are some cool articles and repos on the topic of generative art in Flut
 #### Processing creators
 - [Roni Kaufman](https://openprocessing.org/user/184331?view=sketches&o=48)
 - [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
+- [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
 
 
 If you know of any other resources on this topic, be sure to let me know

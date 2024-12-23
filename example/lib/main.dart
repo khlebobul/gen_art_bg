@@ -6,10 +6,10 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: Scaffold(
       body: WaveLineGrid(
-        columns: 15, // Change this value to change the number of columns
-        rows: 25, // Change this value to change the number of rows
-        locationConstant: 100, // Change this value to change the location
-        animationDuration: Duration(seconds: 5), // Change this value to change the animation duration
+        columns: 15,
+        rows: 25,
+        locationConstant: 100,
+        animationDuration: Duration(seconds: 5),
       )
     ),
   ));

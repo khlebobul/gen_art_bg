@@ -1,8 +1,12 @@
+## 0.2.9
+
+* Add "Used by" section at README
+
 ## 0.2.8
 
 * Add `WaveField` widget ispired by [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_filed.gif" width="200px">
+<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_field.gif" width="200px">
 
 ```dart
   WaveField(
