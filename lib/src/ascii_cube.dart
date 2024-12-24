@@ -295,7 +295,7 @@ class AsciiCubePainter extends CustomPainter {
               text: dotChar,
               style: TextStyle(
                 color: textColor,
-                fontSize: 8 * scale,
+                fontSize: 14 * scale,
               ),
             );
 

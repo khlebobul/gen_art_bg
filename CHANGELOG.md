@@ -1,3 +1,18 @@
+## 0.3.10
+
+* Fix `AsciiCube`: 
+
+```dart
+textPainter.text = TextSpan(
+              text: dotChar,
+              style: TextStyle(
+                color: textColor,
+                fontSize: 14 * scale,
+              ),
+            );
+```
+
+
 ## 0.3.9
 
 * Add `AsciiCube`
