@@ -1,3 +1,21 @@
+## 0.3.9
+
+* Add `AsciiCube`
+
+<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/ascii_cube.gif" width="200px"> <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/ascii_cube_dots.gif" width="200px">
+
+```dart
+AsciiCube(
+        backgroundColor: Colors.black,
+        textColor: Colors.white,
+        animationSpeed: 1.0,
+        scale: 1.0,
+        showDots: true, // like rolling dice
+        edgeChars: ['@', '#', '*', '+', '=', '&'],
+        dotChar: '●',
+      ),
+```
+
 ## 0.2.9
 
 * Add "Used by" section at README

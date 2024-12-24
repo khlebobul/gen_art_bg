@@ -244,6 +244,20 @@ void main() {
         animationSpeed: 0.7,
       ),
  ```
+
+   ##### AsciiCube
+
+  ```dart
+  AsciiCube(
+      backgroundColor: Colors.black,
+      textColor: Colors.white,
+      animationSpeed: 1.0,
+      scale: 1.0,
+      showDots: false, // like rolling dice
+      edgeChars: ['@', '#', '*', '+', '=', '&'],
+      dotChar: '●',
+    )
+  ```
 </details>
 
 ## Showcase
@@ -337,6 +351,16 @@ void main() {
       BubbleField
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/ascii_cube.gif" width="100px">
+      <br />
+      AsciiCube
+    </td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 ## Bugs/Requests
@@ -361,6 +385,10 @@ MIT License
 Created by [Gled](https://khlebobul.github.io/) | khlebobul@gmail.com
 
 [![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
+
+Support the project:
+- [Telegram Stars](https://t.me/khlebobul_dev)
+- [YooMoney](https://yoomoney.ru/to/4100118234947004)
 
 Inspired by [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 

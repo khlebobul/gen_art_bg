@@ -16,3 +16,4 @@ export 'src/dynamic_shapes.dart';
 export 'src/expanding_circles.dart';
 export 'src/wave_field.dart';
 export 'src/bubble_field.dart';
+export 'src/ascii_cube.dart';
