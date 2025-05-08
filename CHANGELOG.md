@@ -1,6 +1,10 @@
+## 0.3.11
+
+* Update "Used by" section
+
 ## 0.3.10
 
-* Fix `AsciiCube`: 
+* Fix `AsciiCube`:
 
 ```dart
 textPainter.text = TextSpan(

@@ -11,10 +11,14 @@ Flutter Animated Generative Art Backgrounds collection.
 
 </div>
 
-## Used by: 
+## Used by:
 - [Knight's Graph](https://knightsgraph.vercel.app)
   - [AppStore](https://apps.apple.com/us/app/knights-graph/id6737812039)
   - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
+
+- [Board Buddy](https://boardbuddyapp.vercel.app/)
+  - [AppStore](https://apps.apple.com/ru/app/board-buddy-score-counter/id6743980638?)
+  - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.board_buddy)
 
 
 ## Usage
