@@ -17,3 +17,4 @@ export 'src/expanding_circles.dart';
 export 'src/wave_field.dart';
 export 'src/bubble_field.dart';
 export 'src/ascii_cube.dart';
+export 'src/retro_grid_background.dart';

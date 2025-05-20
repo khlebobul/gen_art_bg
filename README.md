@@ -40,7 +40,7 @@ void main() {
 ```
 
 <details><summary>Examples of use with parameters</summary>
-  
+
    ##### AnimatedSquares
 
   ```dart
@@ -262,6 +262,25 @@ void main() {
       dotChar: '●',
     )
   ```
+
+  ##### RetroGridBackground
+
+  ```dart
+  RetroGridBackground(
+        config: RetroGridConfig(
+          gridDarkColor: Color.fromRGBO(0, 255, 255, 0.7),
+          gridLightColor: Color.fromRGBO(255, 0, 128, 0.7),
+          shaderColors: [
+            Color(0xFF00FFFF),
+            Color(0xFFFF00FE),
+            Color(0xFFFFFF00),
+          ],
+          gridSize: 30.0, // Size of the grid
+          angle: 65, // Angle of the grid lines
+          animationDuration: Duration(seconds: 1),
+        ),
+      )
+  ```
 </details>
 
 ## Showcase
@@ -361,7 +380,11 @@ void main() {
       <br />
       AsciiCube
     </td>
-    <td align="center"></td>
+    <td align="center">
+      <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/retro_grid_background.gif" width="100px">
+      <br />
+      RetroGridBackground
+    </td>
     <td align="center"></td>
     <td align="center"></td>
   </tr>
@@ -386,7 +409,7 @@ MIT License
 
 [Medium article link](https://medium.com/@khlebobul/adding-a-bit-of-generative-art-to-a-flutter-project-13b22dd4f274)
 
-Created by [Gled](https://khlebobul.github.io/) | khlebobul@gmail.com
+Created by [Gleb](https://khlebobul.github.io/) | khlebobul@gmail.com
 
 [![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
 
@@ -403,6 +426,7 @@ And here are some cool articles and repos on the topic of generative art in Flut
 - [Flutter-Artbook](https://github.com/ikramhasan/Flutter-Artbook)
 - [Art Processing Playground](https://github.com/deam91/art-playground)
 - [GenArtCanvas](https://github.com/Roaa94/gen_art_canvas)
+- [flutterfx_widgets](https://github.com/flutterfx/flutterfx_widgets)
 
 #### p5.js creators
 - [Patt Vira](https://www.pattvira.com)

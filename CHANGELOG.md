@@ -1,3 +1,27 @@
+## 0.4.0
+
+* Update README
+* Add `RetroGridBackground`
+
+<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/retro_grid_background.gif" width="200px">
+
+```dart
+RetroGridBackground(
+        config: RetroGridConfig(
+          gridDarkColor: Color.fromRGBO(0, 255, 255, 0.7),
+          gridLightColor: Color.fromRGBO(255, 0, 128, 0.7),
+          shaderColors: [
+            Color(0xFF00FFFF),
+            Color(0xFFFF00FE),
+            Color(0xFFFFFF00),
+          ],
+          gridSize: 30.0, // Size of the grid
+          angle: 65, // Angle of the grid lines
+          animationDuration: Duration(seconds: 1),
+        ),
+      ),
+```
+
 ## 0.3.11
 
 * Update "Used by" section
