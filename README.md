@@ -2,8 +2,7 @@
 
 <div align="center">
 
-[![pub package](https://img.shields.io/pub/v/gen_art_bg.svg)](https://pub.dartlang.org/packages/gen_art_bg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3730e9650a544fb69a2c72ace6868f0e)](https://app.codacy.com/gh/khlebobul/gen_art_bg/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-
+[![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-F4F0D9?style=for-the-badge&logo=Licence&logoColor=F4F0D9)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE) [![pub package](https://img.shields.io/pub/v/nearby_service.svg?style=for-the-badge&color=F4F0D9)](https://pub.dartlang.org/packages/gen_art_bg)
 
 ![Gen Art Backgrounds GIF](https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/header.gif)
 
@@ -11,7 +10,7 @@ Flutter Animated Generative Art Backgrounds collection.
 
 </div>
 
-## Used by:
+## Used by
 - [Knight's Graph](https://knightsgraph.vercel.app)
   - [AppStore](https://apps.apple.com/us/app/knights-graph/id6737812039)
   - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
