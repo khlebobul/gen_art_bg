@@ -2,9 +2,7 @@
 
 <div align="center">
 
-[![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-F4F0D9?style=for-the-badge&logo=Licence&logoColor=F4F0D9)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE)
-
-[![pub package](https://img.shields.io/pub/v/gen_art_bg.svg?style=for-the-badge&color=F4F0D9)](https://pub.dartlang.org/packages/gen_art_bg)
+[![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-F4F0D9?style=for-the-badge&logo=Licence&logoColor=F4F0D9)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE) [![pub package](https://img.shields.io/pub/v/gen_art_bg.svg?style=for-the-badge&color=F4F0D9)](https://pub.dartlang.org/packages/gen_art_bg)
 
 ![Gen Art Backgrounds GIF](https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/header.gif)
 
