@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  gen_art_bg:
+    path: ..
 
 dev_dependencies:
   flutter_test:
