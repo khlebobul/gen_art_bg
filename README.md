@@ -4,7 +4,9 @@
 
 [![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-414141?style=for-the-badge&logo=Licence&logoColor=414141)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE) [![pub package](https://img.shields.io/pub/v/gen_art_bg.svg?style=for-the-badge&color=414141)](https://pub.dartlang.org/packages/gen_art_bg)
 
-// TODO web demo link
+<a href="https://gen_art_bg.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/web_demo.png" width="650px">
+</a>
 
 Flutter Animated Generative Art Backgrounds collection.
 
@@ -12,14 +14,9 @@ Flutter Animated Generative Art Backgrounds collection.
 
 ## Used by
 
-- [Knight's Graph](https://knightsgraph.vercel.app)
+- [Knight's Graph](https://knightsgraph.vercel.app) ➭ [AppStore](https://apps.apple.com/us/app/knights-graph/id6737812039) / [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
 
-  - [AppStore](https://apps.apple.com/us/app/knights-graph/id6737812039)
-  - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
-
-- [Board Buddy](https://boardbuddyapp.vercel.app/)
-  - [AppStore](https://apps.apple.com/ru/app/board-buddy-score-counter/id6743980638?)
-  - [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.board_buddy)
+- [Board Buddy](https://boardbuddyapp.vercel.app/) ➭ [AppStore](https://apps.apple.com/ru/app/board-buddy-score-counter/id6743980638?) / [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.board_buddy)
 
 ## Usage
 
@@ -289,48 +286,32 @@ If you encounter any problems feel free to open an issue. If you feel the librar
 missing a feature, please raise a ticket on Github and I'll look into it.
 Pull request are also welcome.
 
-## Note
+## Contacts
 
-This is my first package, I will be very grateful to you if you help me to improve it or add new works.
-The artwork is trusted for the web, so for now some of it may not work well on mobile devices.
+[![@khlebobul](https://img.shields.io/badge/@khlebobul-414141?style=for-the-badge&logo=X&logoColor=F1F1F1)](https://x.com/khlebobul) [![Email - khlebobul@gmail.com](https://img.shields.io/badge/Email-khlebobul%40gmail.com-414141?style=for-the-badge&logo=Email&logoColor=F1F1F1)](mailto:khlebobul@gmail.com) [![@khlebobul](https://img.shields.io/badge/%40khlebobul-414141?style=for-the-badge&logo=Telegram&logoColor=F1F1F1)](https://t.me/khlebobul) [![Personal - Website](https://img.shields.io/badge/Personal-Website-414141?style=for-the-badge&logo=Personal&logoColor=F1F1F1)](https://khlebobul.github.io/)
 
 ## License
 
-MIT License
+[![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-414141?style=for-the-badge&logo=Licence&logoColor=F1F1F1)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE)
+
+## Project support
+
+[![Support - Stars](https://img.shields.io/badge/Support-Stars-414141?style=for-the-badge&logo=Telegram&logoColor=F1F1F1)](https://t.me/khlebobul_dev) [![Support - YooMoney](https://img.shields.io/badge/Support-YooMoney-414141?style=for-the-badge&logo=YooMoney&logoColor=F1F1F1)](https://yoomoney.ru/to/4100118234947004)
 
 ## Additional information
 
 [Medium article link](https://medium.com/@khlebobul/adding-a-bit-of-generative-art-to-a-flutter-project-13b22dd4f274)
 
-Created by [Gleb](https://khlebobul.github.io/) | khlebobul@gmail.com
-
-[![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x)](https://x.com/khlebobul) [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/khlebobul)
-
-Support the project:
-
-- [Telegram Stars](https://t.me/khlebobul_dev)
-- [YooMoney](https://yoomoney.ru/to/4100118234947004)
-
 Inspired by [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
 And here are some cool articles and repos on the topic of generative art in Flutter
 
-- [Generative Art in Flutter](https://medium.com/flutter-community/generative-art-in-flutter-9e53701f7805)
-- [funvas](https://github.com/creativecreatorormaybenot/funvas)
-- [Flutter-Artbook](https://github.com/ikramhasan/Flutter-Artbook)
-- [Art Processing Playground](https://github.com/deam91/art-playground)
-- [GenArtCanvas](https://github.com/Roaa94/gen_art_canvas)
-- [flutterfx_widgets](https://github.com/flutterfx/flutterfx_widgets)
+[Generative Art in Flutter](https://medium.com/flutter-community/generative-art-in-flutter-9e53701f7805) / [funvas](https://github.com/creativecreatorormaybenot/funvas) / [Flutter-Artbook](https://github.com/ikramhasan/Flutter-Artbook) / [Art Processing Playground](https://github.com/deam91/art-playground) / [GenArtCanvas](https://github.com/Roaa94/gen_art_canvas) / [flutterfx_widgets](https://github.com/flutterfx/flutterfx_widgets)
 
 #### p5.js creators
 
-- [Patt Vira](https://www.pattvira.com)
-- [mattdesl](https://p5-demos.glitch.me)
+[Patt Vira](https://www.pattvira.com) / [mattdesl](https://p5-demos.glitch.me)
 
 #### Processing creators
 
-- [Roni Kaufman](https://openprocessing.org/user/184331?view=sketches&o=48)
-- [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
-- [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
-
-If you know of any other resources on this topic, be sure to let me know
+[Roni Kaufman](https://openprocessing.org/user/184331?view=sketches&o=48) / [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588) / [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
