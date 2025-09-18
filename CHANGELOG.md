@@ -1,6 +1,7 @@
 ## 0.5.0
 
-* Add web demo page [link]()
+* Add web demo page [link](https://gen-art-bg.vercel.app)
+* Fix deprecation warning
 
 ## 0.4.1
 

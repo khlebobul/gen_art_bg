@@ -4,7 +4,7 @@
 
 [![LICENCE - MIT](https://img.shields.io/badge/LICENCE-MIT-414141?style=for-the-badge&logo=Licence&logoColor=414141)](https://github.com/khlebobul/gen_art_bg/blob/main/LICENSE) [![pub package](https://img.shields.io/pub/v/gen_art_bg.svg?style=for-the-badge&color=414141)](https://pub.dartlang.org/packages/gen_art_bg)
 
-<a href="https://gen_art_bg.vercel.app/" target="_blank" rel="noopener noreferrer">
+<a href="https://gen-art-bg.vercel.app/" target="_blank" rel="noopener noreferrer">
   <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/web_demo.png" width="650px">
 </a>
 
