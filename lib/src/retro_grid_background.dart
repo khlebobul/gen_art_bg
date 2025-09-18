@@ -103,7 +103,7 @@ class _RetroGridBackgroundState extends State<RetroGridBackground>
                     transform: Matrix4.identity()
                       ..setEntry(3, 2, 0.004)
                       ..rotateX(-30 * math.pi / 180)
-                      ..scale(2.0),
+                      ..scaleByDouble(2.0, 2.0, 2.0, 1.0),
                     alignment: Alignment.bottomCenter,
                     child: CustomPaint(
                       size: size,
