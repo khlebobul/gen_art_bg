@@ -6,4 +6,3 @@ class DemoEntry {
 
   const DemoEntry({required this.title, required this.builder});
 }
-

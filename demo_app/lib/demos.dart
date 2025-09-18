@@ -35,8 +35,7 @@ final List<DemoEntry> demos = [
     title: 'Expanding Circles',
     builder: (_) => const ExpandingCircles(),
   ),
-  DemoEntry(title: 'Grid of Lines', builder: (_) => const GridOfLines(
-  )),
+  DemoEntry(title: 'Grid of Lines', builder: (_) => const GridOfLines()),
   DemoEntry(title: 'Perlin Noise', builder: (_) => const PerlinNoise()),
 
   DemoEntry(title: 'Random Square', builder: (_) => const RandomSquare()),
@@ -49,4 +48,3 @@ final List<DemoEntry> demos = [
   DemoEntry(title: 'Wave Field', builder: (_) => const WaveField()),
   DemoEntry(title: 'Wave Line Grid', builder: (_) => const WaveLineGrid()),
 ];
-
