@@ -1,3 +1,7 @@
+## 0.5.1
+
+* Update CHANGELOG
+
 ## 0.5.0
 
 * Add web demo page [link](https://gen-art-bg.vercel.app)
@@ -11,8 +15,6 @@
 
 * Update README
 * Add `RetroGridBackground`
-
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/retro_grid_background.gif" width="200px">
 
 ```dart
 RetroGridBackground(
@@ -54,8 +56,6 @@ textPainter.text = TextSpan(
 
 * Add `AsciiCube`
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/ascii_cube.gif" width="200px"> <img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/ascii_cube_dots.gif" width="200px">
-
 ```dart
 AsciiCube(
         backgroundColor: Colors.black,
@@ -76,8 +76,6 @@ AsciiCube(
 
 * Add `WaveField` widget ispired by [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/wave_field.gif" width="200px">
-
 ```dart
   WaveField(
         gridStep: 15,
@@ -88,8 +86,6 @@ AsciiCube(
 ```
 
 * Add `BubbleField` widget ispired by [bcarrca](https://openprocessing.org/user/307670?view=sketches&o=48)
-
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/bubble_field.gif" width="200px">
 
 ```dart
   BubbleField(
@@ -115,8 +111,6 @@ AsciiCube(
 
 * Add `DynamicShapes` widget ispired by [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
 
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/dynamic_shapes.gif" width="200px">
-
 ```dart
     DynamicShapes(
         colors: [Colors.blue, Colors.red, Colors.green],
@@ -131,8 +125,6 @@ AsciiCube(
 ```
 
 * Add `ExpandingCircles` widget ispired by [Okazz](https://openprocessing.org/user/128718?view=sketches&o=588)
-
-<img src="https://github.com/khlebobul/gen_art_bg/raw/main/screenshots/expanding_circles.gif" width="200px">
 
 ```dart
     ExpandingCircles(
